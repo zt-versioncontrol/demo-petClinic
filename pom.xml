@@ -50,7 +50,7 @@
 	</build>
 
 	<scm>
-		<developerConnection>scm:git:https://github.com/ztexdee/demo-petClinic.git</developerConnection>
+		<developerConnection>scm:git:git@github.com:ztexdee/demo-petClinic.git</developerConnection>
 	</scm>
 
 </project>
