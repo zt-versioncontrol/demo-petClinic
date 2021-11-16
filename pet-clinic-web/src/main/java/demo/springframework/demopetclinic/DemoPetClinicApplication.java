@@ -1,4 +1,4 @@
-package demo.springframework.demopetClinic;
+package demo.springframework.demopetclinic;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
