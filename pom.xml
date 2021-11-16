@@ -14,7 +14,7 @@
 	</parent>
 	<groupId>demo.springframework</groupId>
 	<artifactId>demo-pet-clinic</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>demo-pet-clinic</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -50,7 +50,7 @@
 
 	<scm>
 		<developerConnection>scm:git:git@github.com:ztexdee/demo-petClinic.git</developerConnection>
-	  <tag>demo-pet-clinic-0.0.1</tag>
+	  <tag>HEAD</tag>
   </scm>
 
 </project>
