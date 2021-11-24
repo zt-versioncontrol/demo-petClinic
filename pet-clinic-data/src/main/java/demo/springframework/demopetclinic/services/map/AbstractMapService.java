@@ -3,17 +3,14 @@ package demo.springframework.demopetclinic.services.map;
 import demo.springframework.demopetclinic.model.BaseEntity;
 import demo.springframework.demopetclinic.services.CrudService;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
-public abstract class AbstractMapService<T extends BaseEntity<ID>, ID> implements CrudService<T, ID> {
+public abstract class AbstractMapService<T extends BaseEntity> implements CrudService<T> {
 
-    protected Map<ID, T> map = new HashMap<>();
+    protected Map<Long, T> map = new HashMap<>();
 
     @Override
-    public T findById(ID id){
+    public T findById(Long id){
         return map.get(id);
     }
 
@@ -24,22 +21,32 @@ public abstract class AbstractMapService<T extends BaseEntity<ID>, ID> implement
 
     @Override
     public T save(T object){
-        return save(object.getId(), object);
-    }
-
-    private T save(ID id, T object){
-        map.put(id, object);
+        if(object != null) {
+            Long nextId = getNextId();
+            object.setId(nextId);
+            map.put(nextId, object);
+        }
 
         return object;
     }
 
     @Override
-    public void deleteById(ID id){
+    public void deleteById(Long id){
         map.remove(id);
     }
 
     @Override
     public void delete(T object){
         map.entrySet().removeIf(entry -> entry.getValue().equals(object));
+    }
+
+    private long getNextId(){
+        long nextId;
+        try{
+            nextId =Collections.max(map.keySet()) + 1;
+        }catch (NoSuchElementException e){
+            nextId = 1L;
+        }
+        return nextId;
     }
 }

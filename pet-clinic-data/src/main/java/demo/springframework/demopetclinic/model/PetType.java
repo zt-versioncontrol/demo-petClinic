@@ -1,6 +1,6 @@
 package demo.springframework.demopetclinic.model;
 
-public class PetType extends BaseEntity<Long>{
+public class PetType extends BaseEntity{
     private String name;
 
     public String getName() {

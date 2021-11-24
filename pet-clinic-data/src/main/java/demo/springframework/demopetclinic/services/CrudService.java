@@ -4,9 +4,9 @@ import demo.springframework.demopetclinic.model.BaseEntity;
 
 import java.util.Set;
 
-public interface CrudService<T extends BaseEntity, ID> {
+public interface CrudService<T extends BaseEntity> {
 
-    T findById(ID id);
+    T findById(Long id);
 
     Set<T> findAll();
 
@@ -14,5 +14,5 @@ public interface CrudService<T extends BaseEntity, ID> {
 
     void delete(T object);
 
-    void deleteById(ID id);
+    void deleteById(Long id);
 }
