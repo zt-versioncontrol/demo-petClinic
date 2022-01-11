@@ -37,8 +37,8 @@ public class VetJpaService implements VetService {
     }
 
     @Override
-    public void delete(Vet object) {
-
+    public void delete(Vet vet) {
+        vetRepository.delete(vet);
     }
 
     @Override
