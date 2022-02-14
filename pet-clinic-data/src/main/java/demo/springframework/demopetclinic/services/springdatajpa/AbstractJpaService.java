@@ -9,7 +9,7 @@ import java.util.Set;
 public abstract class AbstractJpaService<ENTITY extends BaseEntity> {
     private final CrudRepository<ENTITY, Long> repository;
 
-    public AbstractJpaService(CrudRepository repository) {
+    protected AbstractJpaService(CrudRepository repository) {
         this.repository = repository;
     }
 
